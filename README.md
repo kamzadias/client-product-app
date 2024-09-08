@@ -22,7 +22,7 @@ RESTful приложение для работы с клиентами, прод
 ### 1. Клонирование репозитория
 
 ```bash
-git clone https://github.com/your-repo/client-product-app.git
+git clone https://github.com/kamzadias/client-product-app.git
 ```
 
 ### 2. Доступ к Swagger UI
