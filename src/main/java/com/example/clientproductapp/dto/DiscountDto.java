@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Data
 @Schema(description = "Информация об акции")
-public class ActionDto {
+public class DiscountDto {
 
     @Schema(description = "ID акции", example = "1")
     private Long id;

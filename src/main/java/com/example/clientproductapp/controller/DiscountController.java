@@ -1,7 +1,7 @@
 package com.example.clientproductapp.controller;
 
-import com.example.clientproductapp.dto.ActionDto;
-import com.example.clientproductapp.service.ActionService;
+import com.example.clientproductapp.dto.DiscountDto;
+import com.example.clientproductapp.service.DiscountService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -12,13 +12,13 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/actions")
-public class ActionController {
+@RequestMapping("/api/discounts")
+public class DiscountController {
 
-    private final ActionService actionService;
+    private final DiscountService discountService;
 
-    public ActionController(ActionService actionService) {
-        this.actionService = actionService;
+    public DiscountController(DiscountService discountService) {
+        this.discountService = discountService;
     }
 
     @Operation(summary = "Получение активных акций")
@@ -26,8 +26,8 @@ public class ActionController {
             @ApiResponse(responseCode = "200", description = "Акции найдены")
     })
     @GetMapping("/active")
-    public ResponseEntity<List<ActionDto>> getActiveActions() {
-        List<ActionDto> actions = actionService.getActiveActions(LocalDate.now());
-        return ResponseEntity.ok(actions);
+    public ResponseEntity<List<DiscountDto>> getActiveDiscounts() {
+        List<DiscountDto> discounts = discountService.getActiveDiscounts(LocalDate.now());
+        return ResponseEntity.ok(discounts);
     }
 }
